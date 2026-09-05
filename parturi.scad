@@ -20,8 +20,8 @@ module kaikki() {
     }
     translate([13,0,-19]) rotate([0,63,0])cube(70,center=true);
     translate([0,0,-7])translate([-37,0,63])rotate([0,90,0]) cylinder(d=17,h=20); 
-    translate([-2,20,67]) cube(9);
-    translate([-2,-28,67]) cube(9);
+        translate([3,0,69]) roundedcube(([12,58,9]),radius=3,center=true);
+
   }
 
   difference(){
@@ -31,7 +31,7 @@ module kaikki() {
       for (y = [1:9:60])
 	{ translate([0,y,0])
 	    cube([60,2,4]);  }
-       cube([40,10,3]);
+      cube([40,10,3]);
       translate([0,48,0]) cube([40,10,3]);
     }
     difference(){
@@ -56,10 +56,14 @@ module kaikki() {
   translate([2,200/10,16]) rotate([0,-90,0]) hampaat();
   translate([2,-220/10,16]) rotate([0,-90,0]) hampaat();
 
-  translate([-21,0,695/10]) cube([6,48,3],center=true);
+  translate([-21,0,693/10]) cube([6,48,3],center=true);
+  translate([-18,-22,691/10]) rotate([0,0,31]) cube([3,7,2],center=true);
+  translate([-18,22,691/10]) rotate([0,0,-31]) cube([3,7,2],center=true);
 
- }
+}
 
-module hampaat() for (x = [0:8:50]) { translate([x,0,0]) cube([4,2,2]); }
+module hampaat() 
+   for (x = [0:4:47]) { translate([x,0,0]) cube([16/10,2,2]); }
+
 
 kaikki();
